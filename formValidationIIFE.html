@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <title>Form Validation -Adv JS </title>
+<style>
+     .div1{
+         background-color:#07F4C9;
+         width:25%;
+         height: 350px;
+         padding:30px 10px 30px 100px;
+         box-shadow:0px 0px 3px 1px;}
+ 
+    .btn{
+         border-radius:5px;
+         margin:30px 0px 0px 100px;}
+ 
+     .login{
+         align:center;}
+ 
+     input[required]{
+         background-image:url(asterix.png);
+         background-size:.5em .5em;
+         background-position:right center;
+         background-repeat:no-repeat;
+    }
+ 
+</style>
+</head>
+<body>
+     <div class="div1">
+         <form action="" name="myForm">
+             Name:<input type="text" name="name" class="login" placeholder="name" autocomplete="off" required><br><br><br>
+             Email:<input type="email" name="email" class="login" placeholder="email" required><br><br><br>
+             Phone:<input type="phonenumber" name="phone" class="login" placeholder="phonenumber" autocomplete="off" required><br><br><br>
+             Address:<input type="textarea" rows="4" cols="10" name="address" class="login1"><br><br><br>
+             <input type="submit" name="submit" class="btn" value="submit" onsubmit="return validateForm()" method="post">
+         </form>
+     </div>
+<script>
+
+            		
+             onblur="(function(id){
+			 var email_id = document.getElementById(id).value;
+             function validate(){                           
+             var regpat = /^[a-zA-Z_\.\-]+@[a-zA-Z_\-\.]+?\.[a-zA-Z]{2,4}$/;                               
+             return regpat.test(email_id);                               
+              }                           
+             alert(validate());                          
+            })('email');">   
+
+            function validateForm(){
+             var x=document.forms["fname"]["email"]["Phone"].value;
+             if (x == null || x== ""){
+             alert("Field must be filled out");}
+             return false;}
+            }			
+
+  </script>
+</body>
+</html>
